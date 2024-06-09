@@ -1,3 +1,4 @@
+import java.lang.StringBuilder
 import java.util.StringTokenizer
 
 fun main(){
@@ -20,10 +21,12 @@ fun main(){
         }
     }
     // result
+    val sb = StringBuilder()
     for(i in 0 until  N){
         for(j in 0 until M){
-            print("${matrix1[i][j] + matrix2[i][j]} ")
+            sb.append("${matrix1[i][j] + matrix2[i][j]} ")
         }
-        println()
+        sb.append("\n")
     }
+    println(sb)
 }
