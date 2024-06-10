@@ -1,12 +1,7 @@
-import java.io.BufferedReader
-import java.io.InputStreamReader
 import java.util.StringTokenizer
 
 fun main(){
-    val br = BufferedReader(InputStreamReader(System.`in`))
-    //val bw = BufferedWriter(OutputStreamWriter(System.out))
-    val st = StringTokenizer(br.readLine())
-    //val sb = StringBuilder()
+    val st = StringTokenizer(readln())
 
     var H = st.nextToken().toInt()
     var M = st.nextToken().toInt()
