@@ -1,10 +1,14 @@
+import java.io.BufferedReader
 import java.io.BufferedWriter
+import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 import java.util.StringTokenizer
 
 fun main(){
-    val st = StringTokenizer(readln())
+    val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
+    val st = StringTokenizer(br.readLine())
+
     var H = st.nextToken().toInt()
     var M = st.nextToken().toInt()
 
@@ -16,5 +20,5 @@ fun main(){
     }
     bw.write("$H $M")
     bw.flush()
-
+    bw.close()
 }
