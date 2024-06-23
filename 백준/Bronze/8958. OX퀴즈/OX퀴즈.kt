@@ -1,5 +1,6 @@
 fun main(){
     val test_case_num = readln().toInt()
+    val sb = StringBuilder()
 
     repeat(test_case_num){
         var total_score = 0
@@ -17,7 +18,8 @@ fun main(){
                 }
             }
         }
-        println(total_score)
-
+        sb.append(total_score)
+        sb.append('\n')
     }
+    print(sb)
 }
