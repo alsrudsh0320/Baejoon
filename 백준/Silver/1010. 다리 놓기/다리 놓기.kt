@@ -13,6 +13,17 @@ tailrec fun factorial(n: Int, acc: BigInteger = BigInteger.ONE): BigInteger {
     }
 }
 
+fun combination(n: Int, r: Int): Long {
+    if (r == 0 || r == n) return 1L
+    val dp = Array(n + 1) { LongArray(r + 1) }
+    for (i in 0..n) {
+        for (j in 0..minOf(i, r)) {
+            dp[i][j] = if (j == 0 || j == i) 1 else dp[i - 1][j - 1] + dp[i - 1][j]
+        }
+    }
+    return dp[n][r]
+}
+
 fun main(){
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
@@ -26,7 +37,8 @@ fun main(){
 
         // m C n
 
-        val result = factorial(M) / (factorial(M - N) * factorial(N))
+        // val result = factorial(M) / (factorial(M - N) * factorial(N))
+        val result = combination(M, N)
         bw.append("$result")
         bw.append("\n")
     }
